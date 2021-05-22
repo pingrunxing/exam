@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, shrink-to-fit=no, user-scalable=no">
+    <link rel="stylesheet" href="css\normalize.css">
+    <link rel="stylesheet" href="css\index02.css">
+
+    <title>腾讯天气</title>
+</head>
+
+<body>
+    <div id="root">
+        <div>
+            <section id="sec-main" class="container C2 night"><a id="link-back" class="" href="javascript:;"></a><a
+                    id="btn-share" class="" href="javascript:;"></a><a id="appShort" class="none"
+                    href="javascript:;">添加到桌面</a><audio id="weather-audio" src=""></audio>
+                <p id="txt-location"><span id="icon-location"></span></p>
+                <div id="ct-pub">
+                    <p class="txt hide"></p>
+                    <!-- 中央气象局 -->
+                </div>
+                <p id="txt-temperature" class="positive"></p>
+                <!-- 大温度 -->
+                <p id="txt-weather"></p>
+                <!-- 晴 -->
+                <div id="ct-wind-humidity">
+                    <p class="txt">北风 1级</p>
+                    <p class="show txt">湿度 85%</p>
+                </div>
+                <p id="txt-tips">现在的温度比较凉爽~</p>
+                <div id="ct-landscape">
+                </div>
+                <div class="ct-aqi level1" data-boss="aqi">
+                    <p id="til">38</p>
+                    <p id="value"></p>
+                    <!-- 优良 -->
+                </div>
+                <div class="ct-pop-window">
+                    <div class="bg-cover"></div>
+                    <div class="ct-window">
+                        <h3 class="title"></h3>
+                        <p class="txt-info"></p><button class="btn-close">我知道了</button>
+                    </div>
+                </div>
+                <div class="ct-pop-window">
+                    <div class="bg-cover"></div>
+                    <div id="ct-air-pop" class="ct-window levelundefined full">
+                        <div id="ct-main"><a id="icon-close"></a>
+                            <p id="titl">空气质量指数</p>
+                            <p id="val"></p>
+                            <p id="level"></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="sec-tomorrow" class="container">
+                <div class="item">
+                    <div class="top">
+                        <p class="date">今天</p>
+                        <p class="temperature">33/16°</p>
+                    </div>
+                    <div class="bottom">
+                        <p class="weather">雷阵雨</p><img src="images/00.svg" class="logo1">
+                        
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="top">
+                        <p class="date">明天</p>
+                        <p class="temperature">23/11°</p>
+                    </div>
+                    <div class="bottom">
+                        <p class="weather">多云转晴</p><img src="images/00.svg" class="logo2">
+                    </div>
+                </div>
+            </section>
+            <section id="sec-hours" class="container">
+                <div id="ct-scroll" style="width: 400%;">
+                    <ol id="ls-hours-weather">
+                        <li class="item" style="width: 3.84615%;">
+                            <p class="txt-time">今天</p><img src="images/night/00 .svg" class="icon">
+                            <p class="txt-degree positive">23</p>
+                        </li>
+                        <li class="item" style="width: 3.84615%;">
+                            <p class="txt-time">01:00</p><img src="images/night/00 .svg" class="icon">
+                            <p class="txt-degree positive">22</p>
+                        </li>
+                        <li class="item" style="width: 3.84615%;">
+                            <p class="txt-time">02:00</p><img src="images/night/00 .svg" class="icon">
+                            <p class="txt-degree positive">21</p>
+                        </li>
+                        <li class="item" style="width: 3.84615%;">
+                            <p class="txt-time">03:00</p><img src="images/night/00 .svg" class="icon">
+                            <p class="txt-degree positive">21</p>
+                        </li>
+                        <li class="item" style="width: 3.84615%;">
+                            <p class="txt-time">04:00</p><img src="images/night/00 .svg" class="icon">
+                            <p class="txt-degree positive">20</p>
+                        </li>
+                        <li class="item keypoint" style="width: 3.84615%;">
+                            <p class="txt-time">04:53</p><img src="images/rise.svg" class="icon">
+                            <p class="txt-key">日出</p>
+                        </li>
+                        <li class="item" style="width: 3.84615%;">
+                            <p class="txt-time">05:00</p><img src="images/00.svg" class="icon">
+                            <p class="txt-degree positive">19</p>
+                        </li>
+                        <li class="item" style="width: 3.84615%;">
+                            <p class="txt-time">06:00</p><img src="images/00.svg" class="icon">
+                            <p class="txt-degree positive">20</p>
+                        </li>
+                        <li class="item" style="width: 3.84615%;">
+                            <p class="txt-time">07:00</p><img src="images/00.svg" class="icon">
+                            <p class="txt-degree positive">21</p>
+                        </li>
+                        <li class="item" style="width: 3.84615%;">
+                            <p class="txt-time">08:00</p><img src="images/00.svg" class="icon">
+                            <p class="txt-degree positive">22</p>
+                        </li>
+                        <li class="item" style="width: 3.84615%;">
+                            <p class="txt-time">09:00</p><img src="images/00.svg" class="icon">
+                            <p class="txt-degree positive">24</p>
+                        </li>
+                        <li class="item" style="width: 3.84615%;">
+                            <p class="txt-time">10:00</p><img src="images/00.svg" class="icon">
+                            <p class="txt-degree positive">26</p>
+                        </li>
+                        <li class="item" style="width: 3.84615%;">
+                            <p class="txt-time">11:00</p><img src="images/00.svg" class="icon">
+                            <p class="txt-degree positive">29</p>
+                        </li>
+                        <li class="item" style="width: 3.84615%;">
+                            <p class="txt-time">12:00</p><img src="images/00.svg" class="icon">
+                            <p class="txt-degree positive">30</p>
+                        </li>
+                        <li class="item" style="width: 3.84615%;">
+                            <p class="txt-time">13:00</p><img src="images/00.svg" class="icon">
+                            <p class="txt-degree positive">31</p>
+                        </li>
+                        <li class="item" style="width: 3.84615%;">
+                            <p class="txt-time">14:00</p><img src="images/00.svg" class="icon">
+                            <p class="txt-degree positive">33</p>
+                        </li>
+                        <li class="item" style="width: 3.84615%;">
+                            <p class="txt-time">15:00</p><img src="images/00.svg" class="icon">
+                            <p class="txt-degree positive">32</p>
+                        </li>
+                        <li class="item" style="width: 3.84615%;">
+                            <p class="txt-time">16:00</p><img src="images/00.svg" class="icon">
+                            <p class="txt-degree positive">32</p>
+                        </li>
+                        <li class="item" style="width: 3.84615%;">
+                            <p class="txt-time">17:00</p><img src="images/00.svg" class="icon">
+                            <p class="txt-degree positive">32</p>
+                        </li>
+                        <li class="item" style="width: 3.84615%;">
+                            <p class="txt-time">18:00</p><img src="images/00.svg" class="icon">
+                            <p class="txt-degree positive">31</p>
+                        </li>
+                        <li class="item" style="width: 3.84615%;">
+                            <p class="txt-time">19:00</p><img src="images/00.svg" class="icon">
+                            <p class="txt-degree positive">29</p>
+                        </li>
+                        <li class="item keypoint" style="width: 3.84615%;">
+                            <p class="txt-time">19:29</p><img src="images/set.svg" class="icon">
+                            <p class="txt-key">日落</p>
+                        </li>
+                        <li class="item" style="width: 3.84615%;">
+                            <p class="txt-time">20:00</p><img src="images/night/00 .svg" class="icon">
+                            <p class="txt-degree positive">28</p>
+                        </li>
+                        <li class="item" style="width: 3.84615%;">
+                            <p class="txt-time">21:00</p><img src="images/night/00 .svg" class="icon">
+                            <p class="txt-degree positive">26</p>
+                        </li>
+                        <li class="item" style="width: 3.84615%;">
+                            <p class="txt-time">22:00</p><img src="images/night/00 .svg" class="icon">
+                            <p class="txt-degree positive">25</p>
+                        </li>
+                        <li class="item" style="width: 3.84615%;">
+                            <p class="txt-time">23:00</p><img src="images/night/00 .svg" class="icon">
+                            <p class="txt-degree positive">25</p>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+            <section id="sec-days" class="container">
+                <div id="ct-scroll" style="width: 500px;">
+                    <ol id="ls-days">
+                        <li class="item" style="width: 62.5px;">
+                            <p class="day">昨天</p>
+                            <p class="date">05/21</p>
+                            <div class="ct-daytime">
+                                <p class="weather">多云</p><img src="images/00.svg" class="icon">
+                            </div>
+                            <div class="ct-night"><img src="images/night/00 .svg" class="icon">
+                                <p class="weather">雷阵雨</p>
+                            </div>
+                            <p class="wind">南风</p>
+                            <p class="wind">3级</p>
+                        </li>
+                        <li class="item" style="width: 62.5px;">
+                            <p class="day">昨天</p>
+                            <p class="date">05/21</p>
+                            <div class="ct-daytime">
+                                <p class="weather">多云</p><img src="images/00.svg" class="icon">
+                            </div>
+                            <div class="ct-night"><img src="images/night/00 .svg" class="icon">
+                                <p class="weather">雷阵雨</p>
+                            </div>
+                            <p class="wind">南风</p>
+                            <p class="wind">3级</p>
+                        </li>
+                        <li class="item" style="width: 62.5px;">
+                            <p class="day">今天</p>
+                            <p class="date">05/22</p>
+                            <div class="ct-daytime">
+                                <p class="weather">雷阵雨</p><img src="images/00.svg" class="icon">
+                            </div>
+                            <div class="ct-night"><img src="images/night/00 .svg" class="icon">
+                                <p class="weather">雷阵雨</p>
+                            </div>
+                            <p class="wind">北风</p>
+                            <p class="wind">4级</p>
+                        </li>
+                        <li class="item" style="width: 62.5px;">
+                            <p class="day">明天</p>
+                            <p class="date">05/23</p>
+                            <div class="ct-daytime">
+                                <p class="weather">多云</p><img src="images/00.svg" class="icon">
+                            </div>
+                            <div class="ct-night"><img src="images/night/00 .svg" class="icon">
+                                <p class="weather">晴</p>
+                            </div>
+                            <p class="wind">西北风</p>
+                            <p class="wind">3级</p>
+                        </li>
+                        <li class="item" style="width: 62.5px;">
+                            <p class="day">后天</p>
+                            <p class="date">05/24</p>
+                            <div class="ct-daytime">
+                                <p class="weather">多云</p><img src="images/00.svg" class="icon">
+                            </div>
+                            <div class="ct-night"><img src="images/night/00 .svg" class="icon">
+                                <p class="weather">多云</p>
+                            </div>
+                            <p class="wind">西北风</p>
+                            <p class="wind">4级</p>
+                        </li>
+                        <li class="item" style="width: 62.5px;">
+                            <p class="day">周二</p>
+                            <p class="date">05/25</p>
+                            <div class="ct-daytime">
+                                <p class="weather">晴</p><img src="images/00.svg" class="icon">
+                            </div>
+                            <div class="ct-night"><img src="images/night/00 .svg" class="icon">
+                                <p class="weather">晴</p>
+                            </div>
+                            <p class="wind">东北风</p>
+                            <p class="wind">3级</p>
+                        </li>
+                        <li class="item" style="width: 62.5px;">
+                            <p class="day">周三</p>
+                            <p class="date">05/26</p>
+                            <div class="ct-daytime">
+                                <p class="weather">多云</p><img src="images/00.svg" class="icon">
+                            </div>
+                            <div class="ct-night"><img src="images/night/00 .svg" class="icon">
+                                <p class="weather">多云</p>
+                            </div>
+                            <p class="wind">东北风</p>
+                            <p class="wind">3级</p>
+                        </li>
+                        <li class="item" style="width: 62.5px;">
+                            <p class="day">周四</p>
+                            <p class="date">05/27</p>
+                            <div class="ct-daytime">
+                                <p class="weather">多云</p><img src="images/00.svg" class="icon">
+                            </div>
+                            <div class="ct-night"><img src="images/night/00 .svg" class="icon">
+                                <p class="weather">阴</p>
+                            </div>
+                            <p class="wind">西北风</p>
+                            <p class="wind">3级</p>
+                        </li>
+                    </ol>
+                    <div id="ct-chart-days" style="width: 500px;">
+                        <img src="images/折线.png" alt="" width="500px" height="136px">
+                    </div>
+                </div>
+            </section>
+            <section id="sec-living" class="container">
+                <div id="living-scroll">
+                    <div class="react-swipe-container "
+                        style="overflow: hidden; visibility: visible; position: relative;">
+                        <div style="overflow: hidden; position: relative; width: 750px;">
+                            <ul class="ls-living" data-index="0"
+                                style="float: left; width: 375px; position: relative; transition-property: transform; left: 0px; transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
+                                <li class="item" data-boss="shzs"><span class="icon icon_xianhao"></span>
+                                    <p class="content">不限行</p>
+                                    <p class="title">尾号限行</p>
+                                </li>
+                                <li class="item" data-boss="shzs"><span class="icon icon_chuanyi_hot"></span>
+                                    <p class="content">热</p>
+                                    <p class="title">穿衣</p>
+                                </li>
+                                <li class="item" data-boss="shzs"><span class="icon icon_yusan"></span>
+                                    <p class="content">不带伞</p>
+                                    <p class="title">雨伞</p>
+                                </li>
+                                <li class="item" data-boss="shzs"><span class="icon icon_ganmao"></span>
+                                    <p class="content">少发</p>
+                                    <p class="title">感冒</p>
+                                </li>
+                                <li class="item" data-boss="shzs"><span class="icon icon_xiche"></span>
+                                    <p class="content">较适宜</p>
+                                    <p class="title">洗车</p>
+                                </li>
+                                <li class="item" data-boss="shzs"><span class="icon icon_yundong"></span>
+                                    <p class="content">较适宜</p>
+                                    <p class="title">运动</p>
+                                </li>
+                                <li class="item" data-boss="shzs"><span class="icon icon_fangsai"></span>
+                                    <p class="content">极强</p>
+                                    <p class="title">防晒</p>
+                                </li>
+                                <li class="item" data-boss="shzs"><span class="icon icon_diaoyu"></span>
+                                    <p class="content">较适宜</p>
+                                    <p class="title">钓鱼</p>
+                                </li>
+                            </ul>
+                            <ul class="ls-living" data-index="1"
+                                style="float: left; width: 375px; position: relative; transition-property: transform; left: -375px; transition-duration: 0ms; transform: translate(375px, 0px) translateZ(0px);">
+                                <li class="item" data-boss="shzs"><span class="icon icon_lvyou"></span>
+                                    <p class="content">适宜</p>
+                                    <p class="title">旅游</p>
+                                </li>
+                                <li class="item" data-boss="shzs"><span class="icon icon_jiaotong"></span>
+                                    <p class="content">良好</p>
+                                    <p class="title">交通</p>
+                                </li>
+                                <li class="item" data-boss="shzs"><span class="icon icon_wurankuosan"></span>
+                                    <p class="content">中</p>
+                                    <p class="title_wurankuosan">空气污染扩散条件</p>
+                                </li>
+                                <li class="item" data-boss="shzs"><span class="icon icon_shushidu"></span>
+                                    <p class="content">较不舒适</p>
+                                    <p class="title">舒适度</p>
+                                </li>
+                                <li class="item" data-boss="shzs"><span class="icon icon_liangshai"></span>
+                                    <p class="content">适宜</p>
+                                    <p class="title">晾晒</p>
+                                </li>
+                                <li class="item" data-boss="shzs"><span class="icon icon_huazhuang"></span>
+                                    <p class="content">去油防晒</p>
+                                    <p class="title">化妆</p>
+                                </li>
+                                <li class="item" data-boss="shzs"><span class="icon icon_chenlian"></span>
+                                    <p class="content">较适宜</p>
+                                    <p class="title">晨练</p>
+                                </li>
+                                <li class="item" data-boss="shzs"><span class="icon icon_guomin"></span>
+                                    <p class="content">较易发</p>
+                                    <p class="title">过敏</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="living-tab"><span class="current"></span><span class=""></span></div>
+                <div class="ct-pop-window">
+                    <div class="bg-cover"></div>
+                    <div class="ct-window">
+                        <h3 class="title"></h3>
+                        <p class="txt-info"></p><button class="btn-close">我知道了</button>
+                    </div>
+                </div>
+            </section>
+            <footer id="sec-footer">
+                <div id="ct-links"><a href="http://m.weather.com.cn" id="txt-pub">数据来源于中国天气网</a></div>
+                <div id="copyright">Copyright © 1998 - 2021 Tencent. All Rights Reserved</div>
+            </footer>
+            <section id="sec-loaction" class="container close">
+                <div id="ct-search"><a id="btn-cancel">取消</a>
+                    <div id="ct-input"><span id="icon-search"></span><input type="text" id="i-location"
+                            placeholder="搜索地区" value=""></div>
+                </div>
+                <div id="ct-hot-city">
+                    <p class="title">热门城市</p>
+                    <ul class="ls-city">
+                        <li class="opt city " data-province="北京" data-city="北京">北京</li>
+                        <li class="opt city center" data-province="上海" data-city="上海">上海</li>
+                        <li class="opt city " data-province="广东" data-city="广州">广州</li>
+                        <li class="opt city " data-province="广东" data-city="深圳">深圳</li>
+                        <li class="opt city center" data-province="河南" data-city="郑州">郑州</li>
+                        <li class="opt city " data-province="陕西" data-city="西安">西安</li>
+                        <li class="opt city " data-province="江苏" data-city="南京">南京</li>
+                        <li class="opt city center" data-province="浙江" data-city="杭州">杭州</li>
+                        <li class="opt city " data-province="湖北" data-city="武汉">武汉</li>
+                        <li class="opt city " data-province="四川" data-city="成都">成都</li>
+                        <li class="opt city center" data-province="辽宁" data-city="沈阳">沈阳</li>
+                        <li class="opt city " data-province="天津" data-city="天津">天津</li>
+                    </ul>
+                </div>
+            </section>
+            <section id="sec-share" class="container close normal">
+                <div id="cover" class=""></div>
+                <div id="ct-share">
+                    <ul id="ls-share-btn">
+                        <li class="share-wx-f" data-boss="share"><span class="icon" id="icon_weixin"></span>
+                            <p class="title">朋友</p>
+                        </li>
+                        <li class="share-wx-t" data-boss="share"><span class="icon" id="icon_pengyouquan"></span>
+                            <p class="title">朋友圈</p>
+                        </li>
+                        <li class="share-qq" data-boss="share"><span class="icon" id="icon_qq"></span>
+                            <p class="title">QQ</p>
+                        </li>
+                        <li class="share-qzone" data-boss="share"><span class="icon" id="icon_qzone"></span>
+                            <p class="title">QQ空间</p>
+                        </li>
+                        <li class="share-wb" data-boss="share"><span class="icon" id="icon_weibo"></span>
+                            <p class="title">新浪微博</p>
+                        </li>
+                    </ul><a href="javascript:;" id="btn-close">取消</a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/index3.js"></script>
+
+</body>
+
+</html>
